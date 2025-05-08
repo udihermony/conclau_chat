@@ -3,25 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple LLM Chat</title>
+    <title>Conclau LLM</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-header">
-            <h1>Chat with ML Studio LLM</h1>
-        </div>
-        <div class="messages-container" id="messages">
-            <div class="system-message">
-                <p>Hello! I'm your LLM assistant. How can I help you today?</p>
+    <div class="app-container">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h1>Conclau LLM</h1>
+            </div>
+            <div id="messages" class="messages-container"></div>
+            <div class="input-container">
+                <textarea id="user-input" placeholder="Type your message here..." rows="1"></textarea>
+                <button id="send-button">Send</button>
             </div>
         </div>
-        <div class="input-container">
-            <textarea id="user-input" placeholder="Type your message here..." rows="3"></textarea>
-            <button id="send-button">Send</button>
+        <div id="transcription-sidebar" class="transcription-sidebar">
+            <div class="sidebar-header">
+                <h2>Transcription Progress</h2>
+                <button id="close-sidebar" class="close-button">×</button>
+            </div>
+            <div id="transcription-content" class="transcription-content"></div>
         </div>
     </div>
-    <script type="module" src="tools.js"></script>
+    <div id="tool-popup" class="tool-popup" style="display: none;">
+        <div class="tool-popup-content">
+            <div class="tool-popup-header">
+                <h3 id="tool-popup-title"></h3>
+                <button class="close-button" onclick="closeToolPopup()">×</button>
+            </div>
+            <div id="tool-popup-body"></div>
+        </div>
+    </div>
     <script type="module" src="script.js"></script>
 </body>
 </html> 
